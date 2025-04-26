@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DEVICE=$(iwctl device list | awk '/station/ {print $2}')
+SSID=$1
+
+if [ -z "$SSID" ]; then
+  echo "Введи SSID мережі, приклад: ./connect_wifi.sh MyWiFi"
+  exit 1
+fi
+
+echo "Підключення до $SSID через пристрій $DEVICE..."
+iwctl station "$DEVICE" connect "$SSID"
