@@ -12,3 +12,6 @@ chmod +x ~/.local/bin/connect_wifi
 ```bash
 connect_wifi Your\ SSID
 ```
+
+
+it work for iwd !
